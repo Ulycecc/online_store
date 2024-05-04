@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Продукты купленные за последние {{ days }} дней покупателем: {{ consumer.name }}</h2>
+<table>
+    {% for order in orders %}
+    <tr>
+
+        <td> {{ order.product.name }} </td>
+
+        <td> {{ order.date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
